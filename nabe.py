@@ -1,12 +1,17 @@
 import requests
 
-for i in range (129203,129203+1000):
-    url=f"https://video-tvtokyo.imgix.net/noginabe/20251123/image/20251123_noginabe_01_a_{i}.jpg"
+for i in range(129203, 129203 - 1000, -1):
+    # https://video-tvtokyo.imgix.net/noginabe/20251030/image/20251030_noginabe_01_a_129070.jpg
+    # https://video-tvtokyo.imgix.net/noginabe/20251116/image/20251116_noginabe_01_a_129202.jpg
+    # https://video-tvtokyo.imgix.net/noginabe/20251123/image/20251123_noginabe_01_a_129471.jpg
+    url = f"https://video-tvtokyo.imgix.net/noginabe/20251109/image/20251109_noginabe_01_a_{i}.jpg"
+    print(url)
+    # continue
     r = requests.get(url)
     if r.status_code == 200:
 
         print(f"Found image {url}")
-        exit() 
+        exit()
 
     else:
         print(f"Image {i} not found (status code: {r.status_code})")
